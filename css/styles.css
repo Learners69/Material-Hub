@@ -29,8 +29,8 @@ body {
 #floating-header {
     max-width: 1320px;
     margin: 0 auto;
-    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.35);
@@ -435,8 +435,8 @@ body {
     border-radius: 1rem;
     text-align: center;
     min-width: 100px;
-    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(108, 99, 255, 0.1);
     transition: transform 0.3s ease;
 }
@@ -460,8 +460,8 @@ body {
     position: relative;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(108, 99, 255, 0.1);
-    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .about-quote i {
@@ -519,6 +519,8 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     animation: float 3s ease-in-out infinite;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .about-badge i {
@@ -661,6 +663,8 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .social-link:hover {
@@ -736,4 +740,209 @@ body {
         width: 36px;
         height: 36px;
     }
+}
+
+/* Modern Dropdown Styling - Enhanced Version */
+.dropdown-menu {
+    border: none;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 
+                0 6px 12px rgba(0, 0, 0, 0.05),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    padding: 1rem 0.5rem;
+    margin-top: 0.7rem;
+    transform-origin: top center;
+    animation: dropdownFade 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    min-width: 220px;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    margin: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(var(--bs-primary-rgb), 0.08);
+    z-index: -1;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.dropdown-item:hover {
+    transform: translateX(5px);
+    color: var(--bs-primary);
+    background-color: transparent;
+}
+
+.dropdown-item:hover::before {
+    width: 100%;
+}
+
+.dropdown-item:active {
+    background-color: rgba(var(--bs-primary-rgb), 0.2);
+    color: var(--bs-primary);
+}
+
+.dropdown-item:focus {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    box-shadow: none;
+    outline: none;
+}
+
+.dropdown-item:focus-visible {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    box-shadow: none;
+    outline: none;
+}
+
+/* Fix for dropdown item text color when clicked multiple times */
+.dropdown-item:not(.active):focus:not(:focus-visible) {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Active category indicator */
+.dropdown-item.active {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    font-weight: 600;
+    position: relative;
+}
+
+.dropdown-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--bs-primary);
+    border-radius: 0 2px 2px 0;
+    z-index: 2;
+}
+
+.dropdown-divider {
+    margin: 0.5rem 1rem;
+    opacity: 0.1;
+    border-color: var(--bs-primary);
+}
+
+/* Active dropdown styling */
+.nav-item.dropdown .dropdown-toggle {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-item.dropdown .dropdown-toggle:focus {
+    color: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-item.dropdown .dropdown-toggle::after {
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    border-top-width: 0.3em;
+}
+
+.nav-item.dropdown.show .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.nav-item.dropdown.show .dropdown-toggle {
+    color: var(--bs-primary);
+}
+
+/* Add subtle indicator dot for dropdown */
+.nav-item.dropdown .dropdown-toggle::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 4px;
+    height: 4px;
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown.show .dropdown-toggle::before,
+.nav-item.dropdown .dropdown-toggle:hover::before {
+    transform: translateX(-50%) scale(1);
+}
+
+/* Fix for dropdown menu text visibility */
+.dropdown-menu a.dropdown-item {
+    color: #212529; /* Bootstrap default text color */
+}
+
+.dropdown-menu a.dropdown-item:hover,
+.dropdown-menu a.dropdown-item:focus,
+.dropdown-menu a.dropdown-item:active,
+.dropdown-menu a.dropdown-item.active {
+    color: var(--bs-primary);
+}
+
+/* Modern Search Input Styling */
+#searchInput {
+  border-radius: 50rem 0 0 50rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+#searchInput:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 5px 20px rgba(13, 110, 253, 0.15);
+}
+
+#searchInput::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+/* Search button styling */
+#searchInput + .btn {
+  border-radius: 0 50rem 50rem 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#searchInput + .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(13, 110, 253, 0.2);
 } 

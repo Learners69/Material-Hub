@@ -16,9 +16,8 @@
     <div class="floating-header-container">
         <nav class="navbar navbar-expand-lg navbar-light rounded-pill shadow" id="floating-header">
             <div class="container-fluid px-4">
-                <a class="navbar-brand" href="#">
-                    <i class="bi bi-box-seam me-2"></i>
-                    Material Hub
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="bi bi-box-seam me-2 text-primary"></i>Material Hub
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,8 +27,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="books.html">Books</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="booksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Books
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="booksDropdown">
+                                <li><a class="dropdown-item" href="books.html?category=psychological">Psychological Self-Help</a></li>
+                                <li><a class="dropdown-item" href="books.html?category=cs">Computer Science</a></li>
+                                <li><a class="dropdown-item" href="books.html?category=biography">Biography & Autobiography</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="books.html">All Books</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="notes.html">Notes</a>
@@ -186,16 +194,16 @@
                     </div>
                     <p class="text-muted mb-4">Empowering learners worldwide with free access to quality educational resources. Join us in making education accessible to everyone.</p>
                     <div class="footer-social d-flex gap-3">
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" title="GitHub">
                             <i class="bi bi-github"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" title="Twitter">
                             <i class="bi bi-twitter-x"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" title="LinkedIn">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" title="Discord">
                             <i class="bi bi-discord"></i>
                         </a>
                     </div>

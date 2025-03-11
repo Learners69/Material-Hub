@@ -1,0 +1,5 @@
+/* 
+This is a placeholder for an actual image file.
+In a real implementation, you would need to create or upload an actual JPG image file here.
+For now, the website will use the onerror fallback mechanism to handle missing images.
+*/ 

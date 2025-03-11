@@ -27,7 +27,7 @@ Edit the book cards in `books.html` by updating the following elements:
 <div class="book-card h-100 rounded-3 shadow-sm">
     <div class="book-cover-container">
         <!-- Update the src attribute with the path to your book cover image -->
-        <img src="images/book-covers/your-book-cover.jpg" alt="Book Title" class="book-cover img-fluid">
+        <img src="images/book-covers/your-book-cover.jpg" alt="Book Title" class="book-cover img-fluid" onerror="this.onerror=null; this.src='images/book-covers/placeholder.jpg'; this.alt='No Cover Available';">
     </div>
     <div class="book-info p-3">
         <!-- Update the book title -->
