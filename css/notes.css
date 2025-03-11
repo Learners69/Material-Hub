@@ -1,0 +1,19 @@
+/* Notes Page Specific Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.card-body {
+    min-height: 70vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        min-height: 85vh;
+    }
+} 

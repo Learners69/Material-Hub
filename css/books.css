@@ -1,0 +1,146 @@
+/* Books Page Specific Styles */
+
+/* Ensure proper spacing for the content below floating header */
+body {
+    padding-top: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* Custom column width for 5 cards per row */
+.col-xl-2\.4 {
+    width: 20%;
+}
+
+@media (max-width: 1200px) {
+    .col-xl-2\.4 {
+        width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-xl-2\.4 {
+        width: 33.333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-xl-2\.4 {
+        width: 50%;
+    }
+}
+
+/* Book card styling with minimal animations */
+.book-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    will-change: transform; /* Optimize for GPU acceleration */
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Book cover container and image */
+.book-cover-container {
+    height: 200px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.book-cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Fallback for missing images */
+.book-cover[alt="No Cover Available"] {
+    object-fit: contain;
+    padding: 10px;
+    opacity: 0.7;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+/* Book info section */
+.book-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 1rem;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.book-author {
+    font-size: 0.85rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Download button */
+.download-btn {
+    margin-top: auto;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-1px);
+}
+
+.download-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive adjustments for book cards */
+@media (max-width: 992px) {
+    .book-cover-container {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-cover-container {
+        height: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .book-cover-container {
+        height: 150px;
+    }
+    
+    .book-title {
+        font-size: 0.9rem;
+    }
+    
+    .book-author {
+        font-size: 0.8rem;
+    }
+} 
