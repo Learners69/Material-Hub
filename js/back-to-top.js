@@ -11,32 +11,41 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 backToTopButton.classList.remove('show');
             }
-        });
+        }, { passive: true }); // Add passive flag for better performance on mobile
         
         // Scroll to top when button is clicked
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Custom smooth scroll with easing
+            // Use modern smooth scrolling for better performance on mobile
             smoothScrollToTop();
         });
     }
     
-    // Custom smooth scrolling function with easing
+    // Improved smooth scrolling function that works better on mobile
     function smoothScrollToTop() {
-        const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        
-        // If we're already at the top, no need to scroll
-        if (currentScroll > 0) {
-            // Use requestAnimationFrame for smoother animation
-            window.requestAnimationFrame(smoothScrollToTop);
-            
-            // Easing function for smoother deceleration
-            // This creates a more natural slowing down effect as we approach the top
-            const scrollStep = Math.max(currentScroll / 8, 1);
-            
-            // Scroll by the calculated step
-            window.scrollTo(0, currentScroll - scrollStep);
+        // Check if the browser supports smooth scrolling natively
+        if ('scrollBehavior' in document.documentElement.style) {
+            // Use native smooth scrolling (more efficient on mobile)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Fallback for browsers that don't support smooth scrolling
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 0) {
+                // Use a more efficient approach with fewer calculations
+                // This reduces CPU usage and prevents glitching on mobile
+                const scrollStep = Math.max(scrollTop / 10, 10);
+                
+                window.requestAnimationFrame(function() {
+                    window.scrollTo(0, scrollTop - scrollStep);
+                    if (scrollTop - scrollStep > 0) {
+                        window.requestAnimationFrame(smoothScrollToTop);
+                    }
+                });
+            }
         }
     }
 }); 
