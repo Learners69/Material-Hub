@@ -7,6 +7,38 @@
     --text-color: #2f2e41;
     --light-text: #4f4d5f;
     --background-color: #f9f8ff;
+    --card-bg: #ffffff;
+    --navbar-bg: rgba(255, 255, 255, 0.35);
+    --navbar-scrolled-bg: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(108, 99, 255, 0.12);
+    --dropdown-text: #212529;
+    --modal-text: #212529;
+    --footer-text: #212529;
+    --book-title: #212529;
+    --book-author: #6c757d;
+    --placeholder-color: #adb5bd;
+}
+
+/* Dark mode variables */
+[data-bs-theme="dark"] {
+    --primary-color: #8c83ff;
+    --secondary-color: #2d2b3d;
+    --accent-color: #ff7a96;
+    --text-color: #e1e0ea;
+    --light-text: #b4b2c5;
+    --background-color: #121212;
+    --card-bg: #1e1e2d;
+    --navbar-bg: rgba(30, 30, 45, 0.75);
+    --navbar-scrolled-bg: rgba(30, 30, 45, 0.9);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --dropdown-text: #e1e0ea;
+    --modal-text: #e1e0ea;
+    --footer-text: #e1e0ea;
+    --book-title: #e1e0ea;
+    --book-author: #b4b2c5;
+    --placeholder-color: #8a8a9a;
 }
 
 /* You can add your custom styles here */
@@ -14,6 +46,7 @@ body {
     min-height: 100vh;
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Floating header styles */
@@ -32,14 +65,14 @@ body {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid var(--border-color);
+    background-color: var(--navbar-bg);
     padding: 0.8rem 1.5rem;
 }
 
 #floating-header.scrolled {
-    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.12);
-    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px var(--shadow-color);
+    background-color: var(--navbar-scrolled-bg);
 }
 
 .navbar-brand {
@@ -47,6 +80,169 @@ body {
     font-size: 1.4rem;
     color: var(--primary-color) !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Header Styles */
+@media (max-width: 991.98px) {
+    .floating-header-container {
+        top: 0.75rem;
+        padding: 0 0.75rem;
+    }
+    
+    #floating-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    #floating-header.scrolled {
+        box-shadow: 0 5px 20px var(--shadow-color);
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    /* Custom mobile navbar toggler */
+    .navbar-toggler {
+        border: none;
+        padding: 0.4rem;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+    }
+    
+    .navbar-toggler:hover {
+        background-color: rgba(var(--bs-primary-rgb), 0.15);
+        transform: rotate(5deg);
+    }
+    
+    .navbar-toggler i {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler:hover i {
+        transform: scale(1.1);
+    }
+    
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+        background-size: contain;
+    }
+    
+    /* Mobile navbar collapse styling */
+    .navbar-collapse {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+        border: 1px solid var(--border-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        transform-origin: top center;
+        animation: mobileNavFade 0.3s ease-out;
+    }
+    
+    @keyframes mobileNavFade {
+        from {
+            opacity: 0;
+            transform: translateY(-10px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    /* Mobile nav items styling */
+    .navbar-nav .nav-item {
+        margin: 0.25rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+        position: relative;
+        font-weight: 500;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .nav-link.active {
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+        color: var(--primary-color);
+        transform: translateX(5px);
+    }
+    
+    .navbar-nav .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: var(--primary-color);
+        border-radius: 0 2px 2px 0;
+    }
+    
+    /* Mobile dropdown styling */
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border: none;
+        box-shadow: none;
+        background-color: rgba(var(--bs-primary-rgb), 0.05);
+        animation: none;
+    }
+    
+    .navbar-nav .dropdown-item {
+        padding: 0.6rem 1rem;
+        margin: 0.1rem 0;
+    }
+    
+    /* Theme toggle button in mobile */
+    .theme-toggle-btn {
+        margin: 0.5rem 0 0 0.5rem;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .floating-header-container {
+        top: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    #floating-header {
+        border-radius: 0.75rem !important;
+    }
+    
+    .navbar-brand i {
+        font-size: 1.1rem;
+    }
 }
 
 /* Custom styling for main content */
@@ -746,7 +942,7 @@ body {
 .dropdown-menu {
     border: none;
     border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.75);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 
@@ -780,6 +976,7 @@ body {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    color: var(--dropdown-text);
 }
 
 .dropdown-item::before {
@@ -929,7 +1126,7 @@ body {
 }
 
 #searchInput::placeholder {
-  color: #adb5bd;
+  color: var(--placeholder-color);
   font-weight: 400;
 }
 
@@ -945,4 +1142,225 @@ body {
 #searchInput + .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(13, 110, 253, 0.2);
+}
+
+/* Theme toggle button styles */
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(108, 99, 255, 0.1);
+    transform: rotate(15deg);
+}
+
+.theme-toggle-btn i {
+    font-size: 1.2rem;
+}
+
+/* Dark mode specific overrides */
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .feature-card,
+[data-bs-theme="dark"] .floating-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-bs-theme="dark"] .dropdown-menu {
+    background-color: rgba(30, 30, 45, 0.75);
+    border-color: var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 
+                0 6px 12px rgba(0, 0, 0, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: var(--dropdown-text);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item:active,
+[data-bs-theme="dark"] .dropdown-item:focus,
+[data-bs-theme="dark"] .dropdown-item.active {
+    color: var(--primary-color);
+}
+
+[data-bs-theme="dark"] .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Fix for dropdown menu text visibility */
+[data-bs-theme="dark"] .dropdown-menu a.dropdown-item {
+    color: var(--dropdown-text);
+}
+
+[data-bs-theme="dark"] .dropdown-menu a.dropdown-item:hover,
+[data-bs-theme="dark"] .dropdown-menu a.dropdown-item:focus,
+[data-bs-theme="dark"] .dropdown-menu a.dropdown-item:active,
+[data-bs-theme="dark"] .dropdown-menu a.dropdown-item.active {
+    color: var(--primary-color);
+}
+
+/* Theme transition class for smooth theme switching */
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Additional dark mode styles for better contrast and readability */
+[data-bs-theme="dark"] .text-muted {
+    color: #a0a0b0 !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: var(--card-bg) !important;
+}
+
+[data-bs-theme="dark"] .border {
+    border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link {
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link:focus {
+    color: var(--primary-color);
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Additional dark mode fixes for specific elements */
+[data-bs-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, rgba(18, 18, 18, 1) 0%, rgba(30, 30, 45, 1) 100%);
+}
+
+[data-bs-theme="dark"] .features-section {
+    background-color: var(--background-color);
+}
+
+[data-bs-theme="dark"] .about-section {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary-color) 100%);
+}
+
+[data-bs-theme="dark"] .about-stat {
+    background: rgba(30, 30, 45, 0.8);
+}
+
+[data-bs-theme="dark"] .about-quote {
+    background: rgba(30, 30, 45, 0.9);
+}
+
+/* Fix for about-badge in dark mode */
+[data-bs-theme="dark"] .about-badge {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-bs-theme="dark"] .footer-section {
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--card-bg) 100%);
+}
+
+/* Fix for book titles and authors in dark mode */
+[data-bs-theme="dark"] .book-title {
+    color: var(--text-color) !important;
+}
+
+[data-bs-theme="dark"] .book-author {
+    color: var(--light-text) !important;
+}
+
+/* Fix for modal text in dark mode */
+[data-bs-theme="dark"] .modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .modal-header,
+[data-bs-theme="dark"] .modal-footer {
+    border-color: var(--border-color);
+}
+
+/* Fix for navbar toggler in dark mode */
+[data-bs-theme="dark"] .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28225, 224, 234, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-toggler {
+    border-color: rgba(225, 224, 234, 0.1);
+}
+
+/* Fix for input placeholders in dark mode */
+[data-bs-theme="dark"] input::placeholder,
+[data-bs-theme="dark"] textarea::placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+[data-bs-theme="dark"] .form-control {
+    background-color: var(--card-bg);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(140, 131, 255, 0.25);
+}
+
+/* Dark mode mobile header styles */
+@media (max-width: 991.98px) {
+    [data-bs-theme="dark"] .navbar-toggler {
+        background-color: rgba(140, 131, 255, 0.15);
+    }
+    
+    [data-bs-theme="dark"] .navbar-toggler:hover {
+        background-color: rgba(140, 131, 255, 0.25);
+    }
+    
+    [data-bs-theme="dark"] .navbar-collapse {
+        background-color: rgba(30, 30, 45, 0.75);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    [data-bs-theme="dark"] .navbar-nav .dropdown-menu {
+        background-color: rgba(140, 131, 255, 0.1);
+    }
+    
+    [data-bs-theme="dark"] .theme-toggle-btn {
+        background-color: rgba(140, 131, 255, 0.15);
+    }
+}
+
+[data-bs-theme="dark"] .footer-section {
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--card-bg) 100%);
+}
+
+/* Fix for book titles and authors in dark mode */
+[data-bs-theme="dark"] .book-title {
+    color: var(--text-color) !important;
+}
+
+[data-bs-theme="dark"] .book-author {
+    color: var(--light-text) !important;
 } 

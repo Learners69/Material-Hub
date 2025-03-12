@@ -16,4 +16,56 @@
     .card-body {
         min-height: 85vh;
     }
+}
+
+/* Dark mode styles */
+[data-bs-theme="dark"] .card {
+    background: rgba(30, 30, 45, 0.95);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] body.bg-light {
+    background-color: #121212 !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #b4b2c5 !important;
+}
+
+/* Fix for dropdown menu text visibility in dark mode */
+[data-bs-theme="dark"] .dropdown-menu {
+    background-color: rgba(30, 30, 45, 0.75);
+    border-color: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: #e1e0ea;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover,
+[data-bs-theme="dark"] .dropdown-item:focus,
+[data-bs-theme="dark"] .dropdown-item:active,
+[data-bs-theme="dark"] .dropdown-item.active {
+    color: #8c83ff;
+}
+
+/* Fix for form controls in dark mode */
+[data-bs-theme="dark"] input::placeholder,
+[data-bs-theme="dark"] textarea::placeholder {
+    color: #8a8a9a !important;
+    opacity: 1;
+}
+
+[data-bs-theme="dark"] .form-control {
+    background-color: #1e1e2d;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e1e0ea;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: #1e1e2d;
+    border-color: #8c83ff;
+    color: #e1e0ea;
 } 
