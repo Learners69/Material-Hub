@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - Material Hub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <button class="skip-button" onclick="skipPreloader()">Skip Intro</button>
+            <div class="preloader-spinner">
+                <img src="images/ui/Supreme.jpg" alt="Material Hub" class="preloader-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Header Container -->
+    <div class="floating-header-container">
+        <nav class="navbar navbar-expand-lg navbar-light rounded-pill shadow" id="floating-header">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="bi bi-box-seam me-2 text-primary"></i>Material Hub
+                    <img src="images/ui/Supreme.jpg" alt="Supreme" class="navbar-brand-image ms-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-grid"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="booksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Books
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="booksDropdown">
+                                <li><a class="dropdown-item" href="books.html?category=psychological">Psychological Self-Help</a></li>
+                                <li><a class="dropdown-item" href="books.html?category=cs">Computer Science</a></li>
+                                <li><a class="dropdown-item" href="books.html?category=biography">Biography & Autobiography</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="books.html">All Books</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notes.html">Notes</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                                <i class="bi bi-sun-fill"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-body p-md-5 p-4">
+                        <div class="mb-5 text-center">
+                            <i class="bi bi-cookie text-primary" style="font-size: 3rem;"></i>
+                            <h1 class="display-5 fw-bold mt-3 mb-4">Cookie Policy</h1>
+                            <p class="text-muted">Last updated: March 15, 2025</p>
+                            <hr class="my-4">
+                        </div>
+
+                        <div class="policy-content">
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">1. What Are Cookies</h2>
+                                <p>Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you.</p>
+                                <div class="alert alert-primary bg-primary bg-opacity-10 border-0 rounded-4 d-flex align-items-center p-4 mb-4">
+                                    <i class="bi bi-info-circle-fill text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <p class="mb-0">Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">2. How We Use Cookies</h2>
+                                <p>When you use and access the Service, we may place a number of cookies files in your web browser. We use cookies for the following purposes:</p>
+                                
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="card h-100 border-0 shadow-sm rounded-4">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                                        <i class="bi bi-gear text-primary"></i>
+                                                    </div>
+                                                    <h3 class="h5 mb-0">Essential Cookies</h3>
+                                                </div>
+                                                <p class="mb-0 text-muted">To enable certain functions of the Service, to provide authentication, and to remember your preferences.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card h-100 border-0 shadow-sm rounded-4">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                                        <i class="bi bi-graph-up text-primary"></i>
+                                                    </div>
+                                                    <h3 class="h5 mb-0">Analytics Cookies</h3>
+                                                </div>
+                                                <p class="mb-0 text-muted">To collect information about how you use our website, which pages you visited and which links you clicked on.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="card h-100 border-0 shadow-sm rounded-4">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                                        <i class="bi bi-megaphone text-primary"></i>
+                                                    </div>
+                                                    <h3 class="h5 mb-0">Marketing Cookies</h3>
+                                                </div>
+                                                <p class="mb-0 text-muted">To deliver advertising that is relevant to your interests and to measure the effectiveness of our marketing campaigns.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card h-100 border-0 shadow-sm rounded-4">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                                        <i class="bi bi-people text-primary"></i>
+                                                    </div>
+                                                    <h3 class="h5 mb-0">Third-Party Cookies</h3>
+                                                </div>
+                                                <p class="mb-0 text-muted">To enable features from third-party services such as social media platforms and analytics providers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">3. Types of Cookies We Use</h2>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th scope="col">Cookie Type</th>
+                                                <th scope="col">Purpose</th>
+                                                <th scope="col">Duration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Authentication</strong></td>
+                                                <td>To identify you when you log in to our website</td>
+                                                <td>Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Security</strong></td>
+                                                <td>For security purposes</td>
+                                                <td>Persistent</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Preferences</strong></td>
+                                                <td>To remember information about how you prefer the website to behave and look</td>
+                                                <td>1 year</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Analytics</strong></td>
+                                                <td>To help us understand how visitors interact with our website</td>
+                                                <td>2 years</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Advertising</strong></td>
+                                                <td>To make advertising more engaging to users</td>
+                                                <td>90 days</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">4. What Are Your Choices Regarding Cookies</h2>
+                                <p>If you'd like to delete cookies or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser.</p>
+                                <p>Please note, however, that if you delete cookies or refuse to accept them, you might not be able to use all of the features we offer, you may not be able to store your preferences, and some of our pages might not display properly.</p>
+                                
+                                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                                    <div class="card-body p-4">
+                                        <h3 class="h5 mb-3">How to manage cookies in major browsers:</h3>
+                                        <ul class="list-group list-group-flush border-0">
+                                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-browser-chrome text-primary me-2"></i> <strong>Chrome:</strong> <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-decoration-none">Chrome Cookie Settings</a></li>
+                                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-browser-safari text-primary me-2"></i> <strong>Safari:</strong> <a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471" target="_blank" rel="noopener" class="text-decoration-none">Safari Cookie Settings</a></li>
+                                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-browser-firefox text-primary me-2"></i> <strong>Firefox:</strong> <a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener" class="text-decoration-none">Firefox Cookie Settings</a></li>
+                                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-browser-edge text-primary me-2"></i> <strong>Edge:</strong> <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-decoration-none">Edge Cookie Settings</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">5. Cookie Consent</h2>
+                                <p>When you first visit our website, we will ask for your consent to use cookies. You can choose to accept or decline cookies. If you choose to decline, some features of the website may not function properly.</p>
+                                <p>You can change your cookie preferences at any time by clicking on the "Cookie Settings" button at the bottom of our website.</p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                                    <button type="button" class="btn btn-primary px-4 py-2">Cookie Settings</button>
+                                </div>
+                            </section>
+
+                            <section class="mb-5">
+                                <h2 class="h4 fw-bold mb-4 text-primary">6. Contact Us</h2>
+                                <p>If you have any questions about our Cookie Policy, please contact us:</p>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                    <span>To be updated soon</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-telephone-fill text-primary me-2"></i>
+                                    <span>To be updated soon</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row g-4 g-lg-5 mb-5">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-brand mb-4">
+                        <i class="bi bi-box-seam me-2 text-primary"></i>
+                        <span>Material Hub</span>
+                    </div>
+                    <p class="text-muted mb-4">Your one-stop destination for educational resources and study materials.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h6 class="footer-title mb-4">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about-section">About Us</a></li>
+                        <li><a href="books.html">Resources</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h6 class="footer-title mb-4">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="books.html">Study Materials</a></li>
+                        <li><a href="books.html?category=cs">PDF Library</a></li>
+                        <li><a href="notes.html">Latest Updates</a></li>
+                        <li><a href="https://discord.gg">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-title mb-4">Newsletter</h6>
+                    <p class="text-muted mb-4">Stay updated with our latest resources and educational content.</p>
+                    <div class="footer-newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="button" title="Subscribe to newsletter">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0 text-muted">© 2025 Material Hub. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="footer-legal">
+                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="terms.html">Terms of Service</a>
+                            <a href="cookies.html" class="active">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/floating-header.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/preloader.js"></script>
+</body>
+</html> 

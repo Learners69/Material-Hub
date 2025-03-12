@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         "title": "Man's Search for Meaning",
         "author": "Viktor E. Frankl",
-        "coverImage": "Man's Search for Meaning.jpg",
+        "coverImage": "Man's Search For Meaning.jpg",
         "downloadLink": "https://www.mediafire.com/file/qx012v2qm4mz21v/Mans_Search_For_Meaning_%2528Viktor_Emil_Frankl%2529_%2528Z-Library%2529.pdf/file"
       }
     ],

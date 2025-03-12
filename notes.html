@@ -15,12 +15,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-light">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <button class="skip-button" onclick="skipPreloader()">Skip Intro</button>
+            <div class="preloader-spinner">
+                <img src="images/ui/Supreme.jpg" alt="Material Hub" class="preloader-image">
+            </div>
+        </div>
+    </div>
+
     <!-- Floating Header Container -->
     <div class="floating-header-container">
         <nav class="navbar navbar-expand-lg navbar-light rounded-pill shadow" id="floating-header">
             <div class="container-fluid px-4">
                 <a class="navbar-brand fw-bold" href="index.html">
                     <i class="bi bi-box-seam me-2 text-primary"></i>Material Hub
+                    <img src="images/ui/Supreme.jpg" alt="Supreme" class="navbar-brand-image ms-2">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-grid"></i>
@@ -62,5 +73,6 @@
     <script src="js/main.js"></script>
     <script src="js/notes.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <script src="js/preloader.js"></script>
 </body>
 </html> 

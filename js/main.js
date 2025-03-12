@@ -1,5 +1,73 @@
 // Custom JavaScript for Material Hub
 
+// Preloader functionality
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    const preloaderImage = document.querySelector('.preloader-image');
+    
+    if (preloader && preloaderImage) {
+        // Function to fade out preloader
+        const fadeOutPreloader = () => {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                // Remove preloader from DOM after animation completes
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 800);
+        };
+
+        // Check if image is already loaded
+        if (preloaderImage.complete) {
+            fadeOutPreloader();
+        } else {
+            // Wait for the image to load
+            preloaderImage.onload = fadeOutPreloader;
+            // Fallback in case image fails to load
+            preloaderImage.onerror = fadeOutPreloader;
+        }
+    }
+});
+
+// Function to show preloader
+function showPreloader() {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.display = 'flex';
+        preloader.classList.remove('fade-out');
+        
+        // Hide preloader after animation
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 1500);
+    }
+}
+
+// Add click event listener to navbar brand image
+document.addEventListener('DOMContentLoaded', () => {
+    const navbarBrandImage = document.querySelector('.navbar-brand-image');
+    if (navbarBrandImage) {
+        navbarBrandImage.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default behavior
+            e.stopPropagation(); // Stop event from bubbling up to parent elements
+            showPreloader();
+        });
+    }
+    
+    // Prevent parent anchor tag from redirecting
+    const navbarBrand = document.querySelector('.navbar-brand');
+    if (navbarBrand) {
+        navbarBrand.addEventListener('click', (e) => {
+            if (e.target.classList.contains('navbar-brand-image')) {
+                e.preventDefault();
+            }
+        });
+    }
+});
+
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Material Hub website loaded successfully!');
