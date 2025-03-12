@@ -18,7 +18,7 @@
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-content">
-            <button class="skip-button" onclick="skipPreloader()">Skip Intro</button>
+            <button class="skip-button">Skip Intro</button>
             <div class="preloader-spinner">
                 <img src="images/ui/Supreme.jpg" alt="Material Hub" class="preloader-image">
             </div>
@@ -67,6 +67,36 @@
         </nav>
     </div>
 
+    <!-- Main Content -->
+    <div class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-4">
+                            <i class="bi bi-journal-text display-1 text-primary"></i>
+                        </div>
+                        <h1 class="display-4 fw-bold mb-4">Notes Feature</h1>
+                        <p class="lead mb-4">This feature is currently being developed and will be available soon.</p>
+                        <div class="alert alert-info p-4 mb-4">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <span>We are working on implementing a comprehensive notes system that will allow you to create, organize, and share your study materials.</span>
+                        </div>
+                        <p class="text-muted">Thank you for your patience as we enhance your learning experience.</p>
+                        <a href="index.html" class="btn btn-primary btn-lg mt-3">
+                            <i class="bi bi-house-door me-2"></i>Return to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
@@ -74,5 +104,6 @@
     <script src="js/notes.js"></script>
     <script src="js/theme-toggle.js"></script>
     <script src="js/preloader.js"></script>
+    <script src="js/back-to-top.js"></script>
 </body>
 </html> 

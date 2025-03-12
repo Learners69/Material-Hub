@@ -229,4 +229,87 @@ body {
     background-color: #1e1e2d;
     border-color: #8c83ff;
     color: #e1e0ea;
+}
+
+/* Modern Modal Styling */
+.modal-content {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+#bookDetailModal .modal-content {
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+#bookDetailModal .modal-title {
+    letter-spacing: -0.01em;
+}
+
+#bookDetailModal .modal-body {
+    padding: 1.5rem;
+}
+
+#bookDetailModal img.rounded-3 {
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#bookDetailModal img.rounded-3:hover {
+    transform: scale(1.02);
+}
+
+#bookDetailModal .badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+}
+
+#bookDetailModal .btn {
+    transition: all 0.2s ease;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+}
+
+#bookDetailModal .btn-primary {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#bookDetailModal .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+#bookDetailModal .btn-outline-secondary:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Dark mode modal enhancements */
+[data-bs-theme="dark"] #bookDetailModal .modal-content {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] #bookDetailModal img.rounded-3 {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] #bookDetailModal .btn-primary {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="dark"] #bookDetailModal .btn-primary:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] #bookDetailModal .btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 } 
